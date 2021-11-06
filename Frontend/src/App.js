@@ -13,7 +13,7 @@ function App() {
   return (
     <Router>
       {/* {cartIsShown && <Cart onClose={cartHideHandler} />} */}
-<<<<<<< HEAD:Frontend/src/App.js
+ {/*<<<<<<< HEAD:Frontend/src/App.js*/}
       <Header />
       <Main/>
    
@@ -22,7 +22,7 @@ function App() {
       {/* <Main /> */}
       <BillForm />
       {/* <Routes> */}
->>>>>>> f63dc6cd9089bedededb0a7eb276117db12622b2:src/App.js
+ {/*>>>>>>> f63dc6cd9089bedededb0a7eb276117db12622b2:src/App.js*/}
       {/* <Route path='/'>
           <Main />
         </Route>
