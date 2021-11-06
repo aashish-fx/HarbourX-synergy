@@ -5,7 +5,7 @@ const LoginModal = (props)=>{
     return (
      <React.Fragment>
          <Backdrop/>
-        <Modal loginHandler = {props.loginHandler}/>
+        <Modal loginHandler = {props.loginHandler1}/>
      </React.Fragment>
     );
 }

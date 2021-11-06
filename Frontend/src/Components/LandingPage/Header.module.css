@@ -12,13 +12,32 @@
 }
 .dropdown_menu1{
     background: white;
-    position: absolute;
+    position: relative;
     border: 1px solid black;
-    width: 200px;
-    height: 200px;
+    width: 160px;
+    height: 100px;
+    border-radius: 5px;
     text-align: center;
     font-size: 1rem;
-    
+    visibility:hidden;
+    opacity:0;
+    left: -5rem;
+   box-sizing: border-box;
+
+
+}
+.dropdown_menu1.active{
+    visibility: visible;
+    opacity: 1;
+}
+.dropdown_menu1 h3{
+    border-bottom: 1px solid black;
+}
+.dropdown_menu1 ul {
+    font-size: 1.5rem;
+    text-align: left;
+    cursor: pointer;
+    font-family: sans-serif;
 }
 .header .logo-content {
     margin-left: 1%;

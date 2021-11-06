@@ -66,8 +66,9 @@ class Main extends Component {
         this.setState({showLink:false})
     }
     loginHandler = (event)=>{
+        console.log("hello")
         this.setState({isAuth:true});
-        this.props.history.replace('/');
+        window.location.reload();
     }
     render(){
         return <div className={styles.container}>
@@ -99,7 +100,7 @@ class Main extends Component {
                 {/* <img src={addFriends} alt='on landing page' /> */}
             </div>
         </div>
-            {this.state.showLogin && <LoginModal loginHandler = {this.loginHandler}/>}
+            {this.state.showLogin && <LoginModal loginHandler1 = {this.loginHandler}/>}
             {this.state.showLink &&<CreateRoomModal closeModal = {this.closeModalHandler}/>}
         </div>
     }

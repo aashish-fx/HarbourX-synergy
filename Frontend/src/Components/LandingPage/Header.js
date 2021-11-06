@@ -11,6 +11,14 @@ const Header = props => {
     const dropDownHandler =  ()=>{
         showProfile.current.classList.toggle('active');
     }
+    const onLogout = ()=>{
+        localStorage.removeItem("token");
+        localStorage.removeItem("image");
+        localStorage.removeItem("userName");
+        localStorage.removeItem("email");
+        localStorage.removeItem("isLogin");
+        window.location.reload()
+    }
     return <div className={styles.header}>
         <div className={styles['logo-content']}>
             <div className={styles.logo}>
@@ -24,10 +32,10 @@ const Header = props => {
             {isLogin &&
                 <div className={styles.user}>
                     <img src={Proimage} alt='user' onClick={dropDownHandler}/>
-                    <div className="dropdown_menu1 " ref={showProfile}>
+                    <div className={styles.dropdown_menu1} ref={showProfile}>
                         <h3>{userName}</h3>
                         <ul>
-                            <l1 onClick = {props.onLogout}>Logout</l1>
+                            <l1 onClick = {onLogout}>Logout</l1>
                         </ul>
                     </div>
                 </div>
