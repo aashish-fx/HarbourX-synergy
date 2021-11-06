@@ -6,20 +6,18 @@ const googleUserSchema = new Schema({
         required:true
     },
     googleId:{
-        type:String,
-        required:true
+        type:String
     },
     name:{
         type:String,
         required:true
     },
-    name:{
-        type:String,
-        required:true
+    email:{
+       type:String,
+       required:true
     },
     image:{
-        type:String,
-        required:true
+        type:String
     },
     status:{
         type:String,
@@ -27,4 +25,4 @@ const googleUserSchema = new Schema({
     },
 
 });
-module.exports = mongoose.modelNames("GoogleUser",googleUserSchema);
+module.exports = mongoose.model("GoogleUser",googleUserSchema);

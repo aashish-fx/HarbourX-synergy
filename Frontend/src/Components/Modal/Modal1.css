@@ -1,0 +1,129 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css");
+
+.googleContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    height: 50px;
+    background: #4385f4;
+    position: relative;
+    color: white;
+    font-family: "Poppins", sans-serif;
+    font-size: 13px;
+    cursor: pointer;
+    margin: 10px;
+  }
+  .googleContainer img {
+    width: 12.5%;
+    height: 100%;
+    object-fit: contain;
+    left: 10px;
+    border-radius: 3px;
+    position: absolute;
+  }
+  .modal_container{
+      width: 100%;
+      height: 20vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+  .modal_container i{
+      font-size: 2rem;
+      margin-left: 2rem;
+    
+  }
+  .modal_container i:hover{
+      transition: 0.5s;
+      border-radius: 50%;
+      border-width:4vh;
+      background: rgb(221, 218, 218);
+      cursor: pointer;
+  }
+  .modal1_input{
+      border-radius: 6px;
+      background-color: #b3c5e4;
+      border-color: transparent;
+      padding: 0.5rem;
+      font-weight: 600;
+      
+  }
+  .modal1_btn{
+      margin-left: 1rem;
+      border-radius: 12px;
+      padding:0.6rem;
+      border-color: rgb(121, 114, 114);
+      background: #83a1d6;
+      cursor: pointer;
+
+  }
+.modal {
+    position: fixed;
+    width: 90%;
+    left: 5%;
+    top: 20vh;
+    background: white;
+    border-radius: 5px;
+    z-index: 2000;
+    box-shadow: 0.5rem 0.5rem rgb(34, 34, 34);
+  }
+  .modal_header {
+    border-bottom: 2px solid rgb(13, 13, 14);
+    display: flex;
+    justify-content: space-between;
+  }
+  .modal_header i{
+      font-size: 2rem;
+      cursor: pointer;
+      opacity: 0.8;
+  }
+  .modal_header h1 {
+    font-size: 1.5rem;
+    color: rgb(10, 10, 10);
+    margin: 1rem;
+  }
+  .modal_content {
+    padding: 1rem;
+  }
+  .modal_actions {
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+  
+    text-align: center;
+  }
+  .modal_actions1 {
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+  
+    text-align: center;
+  }
+  
+  .modal_actions1 button {
+    padding: 10px;
+    border-color: rgb(72, 108, 184);
+    width: 15rem;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: 600;
+    background: transparent;
+    color: rgb(72, 108, 184);
+  }
+  .modal_actions button:hover {
+    cursor: pointer;
+  }
+  .modal_actions modal_btn__2 {
+    color: rgb(56, 138, 153);
+    background: transparent;
+  }
+  @media (min-width: 768px) {
+    .modal {
+      width: 40rem;
+      left: 30vw;
+    }
+  }
+  
