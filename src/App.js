@@ -4,6 +4,7 @@ import {
   Routes,
   Route
 } from "react-router-dom";
+import BillForm from "./Components/BillForm/BillForm";
 
 import Header from "./Components/LandingPage/Header";
 import Main from "./Components/LandingPage/Main";
@@ -12,8 +13,9 @@ function App() {
   return (
     <Router>
       {/* {cartIsShown && <Cart onClose={cartHideHandler} />} */}
-      <Header />
-      <Main />
+      {/* <Header /> */}
+      {/* <Main /> */}
+      <BillForm />
       {/* <Routes> */}
       {/* <Route path='/'>
           <Main />
