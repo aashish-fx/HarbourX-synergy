@@ -14,6 +14,7 @@ import {ChakraProvider} from '@chakra-ui/react';
 import Chat from './Components/Chat/Chat';
 function App() {
   return (
+
     <ChakraProvider>
     <MainProvider>
       <UsersProvider>
@@ -30,6 +31,7 @@ function App() {
       </UsersProvider>
     </MainProvider>
     </ChakraProvider>
+   
   );
 }
 
