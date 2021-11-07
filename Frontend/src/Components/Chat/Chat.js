@@ -9,7 +9,6 @@ import { RiSendPlaneFill } from 'react-icons/ri'
 import { useToast } from "@chakra-ui/react"
 import { SocketContext } from '../../socketContext';
 import ScrollToBottom from 'react-scroll-to-bottom';
-
 import './Chat.scss';
 const Chat = ()=>{
     const { name, room, setName, setRoom } = useContext(MainContext)
@@ -51,6 +50,17 @@ const Chat = ()=>{
         setRoom('');
         history.replace('/')
 
+    }
+    const fileUploader = (event)=>{
+        let files = event.target.files;
+        let reader = new FileReader();
+        reader.readAsDataURL(files[0]);
+        console.log(files);
+        
+        reader.onload=(e)=>{
+            console.log(e.target.result)
+            setMessage(e.target.result)
+        }
     }
     return (
         <Flex className='room' flexDirection='column' width={{ base: "100%", sm: '100%' }} height={{ base: "100%", sm: "100vh" }}>
@@ -97,6 +107,7 @@ const Chat = ()=>{
                 }
             </ScrollToBottom>
             <div className='form'>
+                <input type="file" name="file" onChange = {fileUploader}/>
                 <input type="text" placeholder='Enter Message' value={message} onChange={e => setMessage(e.target.value)} />
                 <IconButton colorScheme='green' isRound='true' icon={<RiSendPlaneFill />} onClick={handleSendMessage} disabled={message === '' ? true : false}>Send</IconButton>
             </div>

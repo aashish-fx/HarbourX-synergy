@@ -5,7 +5,36 @@
     height: 15rem;
     overflow: auto;
 }
+.actions .button--import {
+    color: rgba(255, 145, 0, 0.836);
+}
+.splitSummary{
+ display: none;
+ font-size: 14px;
+ margin-bottom: 15px;
+ font-family: 'poppins',sans-serif;
+}
+.splitSummary span{
+     color: #8a2b06;
+     font-size: 16px;
+     margin-left: 5px;
 
+}
+.splitSummary p{
+    margin-bottom:0px
+    }
+.split button:hover,.split button:active{
+    background-color: rgba(255, 145, 0, 0.836);
+    border-color: rgba(255, 145, 0, 0.836);
+    color: black;
+}
+.active{
+    display: block;
+}
+
+.csv {
+    text-decoration: none;
+}
 .total {
     display: flex;
     justify-content: space-between;
@@ -18,6 +47,10 @@
 .actions {
     text-align: right;
 }
+.actions1{
+    position: relative;
+
+}
 
 .actions button {
     font: inherit;
@@ -29,7 +62,17 @@
     margin-left: 1rem;
     margin-bottom: 6px;
 }
-
+.split button {
+    font-size: 14px;
+    cursor: pointer;
+    color:rgba(255, 145, 0, 0.836);
+    background-color: transparent;
+    border: 1px solid rgba(255, 145, 0, 0.836);
+    padding: 0.5rem 2rem;
+    border-radius: 25px;
+    margin-left: 1rem;
+    margin-bottom: 6px;
+}
 .actions button:hover,
 .actions button:active {
     background-color: rgba(255, 145, 0, 0.836);
