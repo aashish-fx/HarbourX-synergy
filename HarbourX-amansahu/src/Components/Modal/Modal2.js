@@ -16,11 +16,11 @@ const ModalOverlay = props => {
 
 const modalPortalRefrence = document.getElementById('overlays');
 
-const Modal = props => {
+const Modal2 = props => {
     return <React.Fragment>
         {ReactDOM.createPortal(<BackDrop onClose={props.onClose} />, modalPortalRefrence)}
         {ReactDOM.createPortal(<ModalOverlay>{props.children}</ModalOverlay>, modalPortalRefrence)}
     </React.Fragment>
 }
 
-export default Modal;
+export default Modal2;
