@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import styles from './Modal.module.css';
+import styles from './ModalCart.module.css';
 
 const BackDrop = (props) => {
     return <div className={styles.backdrop} onClick={props.onClose}>
@@ -16,11 +16,11 @@ const ModalOverlay = props => {
 
 const modalPortalRefrence = document.getElementById('overlays');
 
-const Modal2 = props => {
+const ModalCart = props => {
     return <React.Fragment>
         {ReactDOM.createPortal(<BackDrop onClose={props.onClose} />, modalPortalRefrence)}
         {ReactDOM.createPortal(<ModalOverlay>{props.children}</ModalOverlay>, modalPortalRefrence)}
     </React.Fragment>
 }
 
-export default Modal2;
+export default ModalCart;

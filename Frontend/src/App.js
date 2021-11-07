@@ -1,36 +1,35 @@
 import React from "react";
 import {
-  BrowserRouter as Router,
-  Routes,
+  Switch,
   Route
 } from "react-router-dom";
+import FormSubmit from './Components/FormSubmit/FormSubmitHandler';
 import BillForm from "./Components/BillForm/BillForm";
-
+import { UsersProvider } from "./usersContext";
+import { MainProvider } from "./mainContext";
+import { SocketProvider } from "./socketContext";
 import Header from "./Components/LandingPage/Header";
 import Main from "./Components/LandingPage/Main";
-
+import { ChakraProvider } from '@chakra-ui/react';
+import Chat from './Components/Chat/Chat';
 function App() {
   return (
-    <Router>
-      {/* {cartIsShown && <Cart onClose={cartHideHandler} />} */}
- {/*<<<<<<< HEAD:Frontend/src/App.js*/}
-      <Header />
-      <Main/>
-   
-=======
-      {/* <Header /> */}
-      {/* <Main /> */}
-      <BillForm />
-      {/* <Routes> */}
- {/*>>>>>>> f63dc6cd9089bedededb0a7eb276117db12622b2:src/App.js*/}
-      {/* <Route path='/'>
-          <Main />
-        </Route>
-        <Route path='home'>
-          <Main />
-        </Route> */}
-      
-    </Router>
+
+    <ChakraProvider>
+      <MainProvider>
+        <UsersProvider>
+          <SocketProvider>
+
+            <Switch>
+              <Route exact path='/' component={Main} />
+              <Route exact path='/chat' component={Chat} />
+              <Route exact path='/form' component={FormSubmit} />
+            </Switch>
+          </SocketProvider>
+        </UsersProvider>
+      </MainProvider>
+    </ChakraProvider>
+
   );
 }
 

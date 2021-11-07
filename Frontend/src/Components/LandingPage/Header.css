@@ -10,7 +10,35 @@
     align-items: center;
     justify-content: space-between;
 }
+.dropdown_menu1{
+    background: white;
+    position: relative;
+    border: 1px solid black;
+    width: 160px;
+    height: 100px;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 1rem;
+    visibility:hidden;
+    opacity:0;
+    left: -5rem;
+   box-sizing: border-box;
 
+
+}
+.dropdown_menu1.active{
+    visibility: visible;
+    opacity: 1;
+}
+.dropdown_menu1 h3{
+    border-bottom: 1px solid black;
+}
+.dropdown_menu1 ul {
+    font-size: 1.5rem;
+    text-align: left;
+    cursor: pointer;
+    font-family: sans-serif;
+}
 .header .logo-content {
     margin-left: 1%;
     display: flex;
@@ -29,6 +57,7 @@
 
 .header .logo-content .logo img {
     height: 100%;
+    
     width: 100%;
     object-fit: contain;
 }
@@ -60,6 +89,7 @@
     height: 100%;
     width: 100%;
     border-radius: 50%;
+    cursor: pointer;
 }
 
 @media only screen and (max-width: 600px) {

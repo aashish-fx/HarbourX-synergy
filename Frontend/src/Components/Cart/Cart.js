@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import styles from './Cart.module.css';
 import { CSVLink } from 'react-csv';
-import Modal2 from '../Modal/Modal2';
+import ModalCart from '../Modal/ModalCart';
+import Modal from '../Modal/ModalCart';
 import CartItem from './CartItem';
 
 
@@ -41,7 +42,7 @@ const Cart = props => {
 
     const splitClass = `${styles.splitSummary} ${isSplitClicked && styles.active}`
 
-    return <Modal2 onClose={props.onClose}>
+    return <ModalCart onClose={props.onClose}>
         {Cartitems.length === '0' && <p>Cart Is Empty</p>}
         {Items}
         <div className={styles.total}>
@@ -60,7 +61,7 @@ const Cart = props => {
             <button className={styles['button--alt']} onClick={props.onClose}>Close</button>
 
         </div>
-    </Modal2>
+    </ModalCart>
 }
 
 export default Cart;

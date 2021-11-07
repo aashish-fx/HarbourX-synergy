@@ -27,8 +27,17 @@
 .main-section .buttons-info {
     flex-basis: 60%;
     height: 100%;
-}
+   
+    
 
+}
+.formButton{
+    position: relative;
+    left: -4rem;
+}
+.formButton button{
+     border-radius: 5px;
+}
 
 .create button {
     width: 180px;
