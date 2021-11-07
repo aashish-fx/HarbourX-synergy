@@ -57,6 +57,7 @@
 
 .header .logo-content .logo img {
     height: 100%;
+    
     width: 100%;
     object-fit: contain;
 }
@@ -88,6 +89,7 @@
     height: 100%;
     width: 100%;
     border-radius: 50%;
+    cursor: pointer;
 }
 
 @media only screen and (max-width: 600px) {

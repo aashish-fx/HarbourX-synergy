@@ -29,7 +29,7 @@ const Modal = (props)=>{
                 localStorage.setItem("userName", resData.userName); 
                 localStorage.setItem("image",resData.image);
                 localStorage.removeItem("logout");
-                props.loginHandler();    
+                props.loginHandler();   
          })
          .catch(err=>{
              console.log(err)
