@@ -1,5 +1,5 @@
 import React ,{useEffect,useState,useContext} from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { UsersContext } from '../../usersContext';
 import  {MainContext} from '../../mainContext';
 import { Box, Flex, Heading, IconButton, Text, Menu, Button, MenuButton, MenuList, MenuItem } from "@chakra-ui/react"
@@ -18,13 +18,13 @@ const Chat = ()=>{
     const [messages,setMessages] = useState([])
     const {users} = useContext(UsersContext);
     const toast = useToast();
-    const navigate = useNavigate()
+    const history = useHistory()
     useEffect(()=>{
         if(!name)
         {
-            return navigate('/')
+            return history.replace('/')
         }
-    },[navigate,name])
+    },[history,name])
     useEffect(()=>{
         socket.on("message",(msg)=>{
             setMessages(messages=>[...messages,msg]);
@@ -49,11 +49,11 @@ const Chat = ()=>{
     const logout = ()=>{
         setName('');
         setRoom('');
-        navigate('/')
+        history.replace('/')
 
     }
     return (
-        <Flex className='room' flexDirection='column' width={{ base: "100%", sm: '575px' }} height={{ base: "100%", sm: "auto" }}>
+        <Flex className='room' flexDirection='column' width={{ base: "100%", sm: '100%' }} height={{ base: "100%", sm: "100vh" }}>
             <Heading className='heading' as='h4' bg='white' p='1rem 1.5rem' borderRadius='10px 10px 0 0'>
                 <Flex alignItems='center' justifyContent='space-between'>
                     <Menu >

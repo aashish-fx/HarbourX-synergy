@@ -1,7 +1,7 @@
 import React,{useState,useEffect, useContext} from 'react';
 import styles from './Main.module.css';
 import background from '../../assests/background.jpg'
-import {useNavigate} from 'react-router-dom';
+import {useHistory} from 'react-router-dom';
 import LoginModal from '../LoginModal/LoginModal';
 import addFriends from '../../assests/addFriends.png'
 import {UsersContext} from '../../usersContext';
@@ -9,14 +9,14 @@ import { MainContext } from '../../mainContext'
 import { SocketContext } from '../../socketContext'
 import {useToast} from '@chakra-ui/react';
 import CreateRoomModal from '../CreateRoomModal/CreateRoomModal';
-
+import Header from './Header';
 const Main = ()=> {
     const toast = useToast();
     
     const socket = useContext(SocketContext)
     const {name,setName,room,setRoom} = useContext(MainContext)
     const {setUsers} = useContext(UsersContext);
-    const navigate = useNavigate();
+    const history = useHistory();
     const [isAuth,setIsAuth] = useState(false);
     const [token,setToken] = useState(null);
     const [showLogin,setShowLogin] = useState(false);
@@ -66,11 +66,11 @@ const Main = ()=> {
     }
     const handleClick = (event)=>{
         event.preventDefault();
-        const userName = localStorage.getItem("userName")
+        const name = localStorage.getItem("userName")
         const room = roomLink
-        setName(userName);
-        console.log(userName);
-        socket.emit('login',{userName,room},error=>{
+        setName(name);
+        console.log(name,roomLink);
+        socket.emit('login',{name,room},error=>{
             if(error){
                 console.log(error)
                 return toast({
@@ -82,18 +82,24 @@ const Main = ()=> {
                     isClosable:true,
                 })
             }
-            console.log(userName);
-            navigate('/chat');
+            console.log(name);
+            history.replace('/chat');
             return toast({
                 position:"top",
                 title:"Hey there",
-                description:5000,
+                description:name,
                 isClosable:true
             })
         })
+        
+    }
+    const CreateBillHandler = ()=>{
+        history.replace('/form')
     }
     
         return (
+            <React.Fragment>
+                <Header/>
         <div className={styles.container}>
         <div className={styles['main-section']}>
             <div className={styles['buttons-info']}>
@@ -118,13 +124,17 @@ const Main = ()=> {
                     </div>
                 </div>
             </div>
-            <div className={styles.images}>
-                {/* <img src={addFriends} alt='on landing page' /> */}
+            {isAuth &&
+            <div className={styles.create}>
+                <button onClick={CreateBillHandler}>Create Bill</button>
             </div>
+              }
         </div>
             {showLogin && <LoginModal loginHandler1 = {loginHandler}/>}
             {showLink &&<CreateRoomModal closeModal = {closeModalHandler}/>}
         </div>
+        
+        </React.Fragment>
         )
     
 }

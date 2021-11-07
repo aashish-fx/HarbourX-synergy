@@ -1,9 +1,9 @@
 import React from "react";
 import {
-  BrowserRouter as Router,
-  Routes,
+  Switch,
   Route
 } from "react-router-dom";
+import FormSubmit from './Components/FormSubmit/FormSubmitHandler';
 import BillForm from "./Components/BillForm/BillForm";
 import { UsersProvider } from "./usersContext";
 import { MainProvider } from "./mainContext";
@@ -19,14 +19,12 @@ function App() {
     <MainProvider>
       <UsersProvider>
         <SocketProvider>
-          <Router>
-            <Header/>
-            <Chat/>
-            <Routes>
-            <Route exact path="/chat" exact element={<Chat/>}/>
-            <Route exact path="/chat" exact element={<Chat/>}/>
-           </Routes>
-          </Router>
+            
+            <Switch>
+            <Route exact path='/' component={Main}/>
+            <Route exact path='/chat' component={Chat}/>
+            <Route exact path='/form' component={FormSubmit}/>
+           </Switch>
         </SocketProvider>
       </UsersProvider>
     </MainProvider>

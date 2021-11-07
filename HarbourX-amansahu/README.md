@@ -1,1 +1,0 @@
-# HarbourX-synergy

@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './Cart.module.css';
-import Modal from '../Modal/Modal';
+import Modal from '../Modal/ModalCart';
 import CartItem from './CartItem';
 
 

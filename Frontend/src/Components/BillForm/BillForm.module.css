@@ -4,8 +4,16 @@
     min-width: 350px;
     background-color: rgba(255, 145, 0, 0.836);
     padding: 10px 2% 20px 4%;
+    border-radius: 6px;
 }
-
+.bill_form_container{
+    width: 100%;
+    display: flex;
+    background-image: url(../../assests/background.jpg);
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
 .selectbox {
     display: flex;
     flex-direction: column;
