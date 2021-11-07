@@ -1,5 +1,5 @@
 import React from 'react';
-import {useHistory} from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import styles from './BillForm.module.css';
 import { useState } from 'react';
 
@@ -84,42 +84,42 @@ const BillForm = props => {
         setEnteredName('');
         setEnteredPrice('');
     }
-    const onClose = ()=>{
+    const onClose = () => {
         history.replace('/')
     }
 
     return (
         <div className={styles.bill_form_container}>
-        <div className={styles['bill-form']}>
-            <form className={styles.form} onSubmit={formSubmitHandler}>
-                <div className={styles.selectbox}>
-                    <label htmlFor='expense-category'>Select Category</label>
-                    <select required name='expense-category' id='expense-category' onChange={categoryChangeHandler} value={expenseCategory}>
-                        {expenses}
-                    </select>
-                </div>
-                <div className={styles.expense}>
-                    <div className={styles['expense-name']}>
-                        <label htmlFor=''>Paid For</label>
-                        <input type='text' name='' id='' required onChange={nameChangeHandler} value={enteredName} />
+            <div className={styles['bill-form']}>
+                <form className={styles.form} onSubmit={formSubmitHandler}>
+                    <div className={styles.selectbox}>
+                        <label htmlFor='expense-category'>Select Category</label>
+                        <select required name='expense-category' id='expense-category' onChange={categoryChangeHandler} value={expenseCategory}>
+                            {expenses}
+                        </select>
                     </div>
+                    <div className={styles.expense}>
+                        <div className={styles['expense-name']}>
+                            <label htmlFor=''>Paid For</label>
+                            <input type='text' name='' id='' required onChange={nameChangeHandler} value={enteredName} />
+                        </div>
 
-                    <div className={styles['expense-prize']}>
-                        <label htmlFor=''>Paid Amount <span>(in Rupees)</span></label>
-                        <input type='number' min='1' name='' id='' required onChange={priceChangeHandler} value={enteredPrice} />
+                        <div className={styles['expense-prize']}>
+                            <label htmlFor=''>Paid Amount <span>(in Rupees)</span></label>
+                            <input type='number' min='1' name='' id='' required onChange={priceChangeHandler} value={enteredPrice} />
+                        </div>
+
                     </div>
-
-                </div>
-                <div className={styles.buttons}>
-                    <button type='button' onClick={props.onClick} className={styles.cart}>Cart</button>
-                    <button type='submit' className={styles.submit}>Submit</button>
-                </div>
-                <div className={styles.close} >
-                    <button type='button' onClick={onClose}>Close Form</button>
-                </div>
-            </form >
-        </div >
-    </div>
+                    <div className={styles.buttons}>
+                        <button type='button' onClick={props.onClick} className={styles.cart}>Cart</button>
+                        <button type='submit' className={styles.submit}>Submit</button>
+                    </div>
+                    <div className={styles.close} >
+                        <button type='button' onClick={onClose}>Close Form</button>
+                    </div>
+                </form >
+            </div >
+        </div>
     )
 }
 

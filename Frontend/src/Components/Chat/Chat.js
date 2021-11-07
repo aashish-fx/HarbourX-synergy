@@ -1,7 +1,7 @@
-import React ,{useEffect,useState,useContext} from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import { useHistory } from 'react-router-dom';
 import { UsersContext } from '../../usersContext';
-import  {MainContext} from '../../mainContext';
+import { MainContext } from '../../mainContext';
 import { Box, Flex, Heading, IconButton, Text, Menu, Button, MenuButton, MenuList, MenuItem } from "@chakra-ui/react"
 import { FiList } from 'react-icons/fi'
 import { BiMessageDetail } from 'react-icons/bi'
@@ -10,25 +10,24 @@ import { useToast } from "@chakra-ui/react"
 import { SocketContext } from '../../socketContext';
 import ScrollToBottom from 'react-scroll-to-bottom';
 import './Chat.scss';
-const Chat = ()=>{
+const Chat = () => {
     const { name, room, setName, setRoom } = useContext(MainContext)
     const socket = useContext(SocketContext)
-    const [message,setMessage] = useState('');
-    const [messages,setMessages] = useState([])
-    const {users} = useContext(UsersContext);
+    const [message, setMessage] = useState('');
+    const [messages, setMessages] = useState([])
+    const { users } = useContext(UsersContext);
     const toast = useToast();
     const history = useHistory()
-    useEffect(()=>{
-        if(!name)
-        {
+    useEffect(() => {
+        if (!name) {
             return history.replace('/')
         }
-    },[history,name])
-    useEffect(()=>{
-        socket.on("message",(msg)=>{
-            setMessages(messages=>[...messages,msg]);
+    }, [history, name])
+    useEffect(() => {
+        socket.on("message", (msg) => {
+            setMessages(messages => [...messages, msg]);
         })
-        socket.on("notification",notif=>{
+        socket.on("notification", notif => {
             toast({
                 position: "top",
                 title: notif?.title,
@@ -38,14 +37,14 @@ const Chat = ()=>{
                 isClosable: true,
             })
         })
-    },[socket,toast])
-    const handleSendMessage = ()=>{
-        socket.emit('sendMessage',message,()=>{
+    }, [socket, toast])
+    const handleSendMessage = () => {
+        socket.emit('sendMessage', message, () => {
             setMessage('')
         })
         setMessage('')
     }
-    const logout = ()=>{
+    const logout = () => {
         setName('');
         setRoom('');
         history.replace('/')
@@ -114,4 +113,4 @@ const Chat = ()=>{
         </Flex>
     )
 }
- export default Chat;
+export default Chat;
